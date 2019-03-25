@@ -25,9 +25,9 @@ int main(int argc, char *argv[]) {
         setiopolicy_np(
             IOPOL_TYPE_DISK, IOPOL_SCOPE_PROCESS, IOPOL_IMPORTANT
         );
-    } else if(strncmp("--normal", argv[1], 6) == 0) {
+    } else if(strncmp("--normal", argv[1], 8) == 0) {
         /* do nothing */
-    } else if(strncmp("--low", argv[1], 6) == 0) {
+    } else if(strncmp("--low", argv[1], 5) == 0) {
         setiopolicy_np(
             IOPOL_TYPE_DISK, IOPOL_SCOPE_PROCESS, IOPOL_THROTTLE
         );
