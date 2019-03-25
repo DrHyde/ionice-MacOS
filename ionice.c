@@ -16,8 +16,6 @@ void show_usage(char *name) {
 }
 
 int main(int argc, char *argv[]) {
-    int status = 0;
-
     if(argc < 3) {
         show_usage(argv[0]);
         exit(1);
