@@ -4,8 +4,8 @@ ionice - execute a utility with an altered I/O scheduling priority
 
 =head1 SYNOPSIS
 
-  nice --high utility [argument ...]
-  nice --low  utility [argument ...]
+  ionice --high utility [argument ...]
+  ionice --low  utility [argument ...]
 
 =head1 DESCRIPTION
 
