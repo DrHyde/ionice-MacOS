@@ -11,6 +11,8 @@ void show_usage(char *name) {
     fprintf(stderr, "Usage: %s --high   <utility>\n", name);
     fprintf(stderr, "    or %s --low    <utility>\n", name);
     fprintf(stderr, "    or %s --normal <utility>\n\n", name);
+    fprintf(stderr, "Copyright 2019 David Cantrell, licenced under the\n");
+    fprintf(stderr, "GNU General Public Licence version 2\n\n");
 }
 
 int main(int argc, char *argv[]) {
