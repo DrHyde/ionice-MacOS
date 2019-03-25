@@ -1,0 +1,39 @@
+=head1 NAME
+
+ionice - execute a utility with an altered I/O scheduling priority
+
+=head1 SYNOPSIS
+
+  nice --high utility [argument ...]
+  nice --low  utility [argument ...]
+
+=head1 DESCRIPTION
+
+ionice runs I<utility> with an altered scheduling priority. That priority can
+be C<--high>, C<--low>, or the mostly useless C<--normal> that is a no-op
+present only because it may make scripting simpler.
+
+=head1 DIAGNOSTICS
+
+The exit value will be non-zero for any errors. If it manages to set the
+priority and execute I<utility> then it will be that of I<utility>.
+
+=head1 SEE ALSO
+
+L<nice(1)>
+
+=head1 BUGS
+
+Please report any bugs via Github:
+L<https://github.com/DrHyde/ionice-MacOS/issues>
+
+=head1 AUTHOR, LICENCE, and COPYRIGHT
+
+This software is free-as-in-speech and is copyright 2019 David Cantrell
+L<david@cantrell.org.uk>. You may use, distribute, and modify it under the
+terms provided for in the GNU General Public Licence version 2, a copy of which
+is provided.
+
+=head1 CONSPIRACY
+
+This software is also free-as-in-mason.
