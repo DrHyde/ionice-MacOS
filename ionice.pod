@@ -6,11 +6,12 @@ ionice - execute a utility with an altered I/O scheduling priority
 
   ionice --high utility [argument ...]
   ionice --low  utility [argument ...]
+  ionice --idle utility [argument ...]
 
 =head1 DESCRIPTION
 
 ionice runs I<utility> with an altered scheduling priority. That priority can
-be C<--high>, C<--low>, or the mostly useless C<--normal> that is a no-op
+be C<--high>, C<--low>, C<--idle> or the mostly useless C<--normal> that is a no-op
 present only because it may make scripting simpler.
 
 =head1 DIAGNOSTICS
@@ -33,6 +34,8 @@ This software is free-as-in-speech and is copyright 2019 David Cantrell
 L<david@cantrell.org.uk>. You may use, distribute, and modify it under the
 terms provided for in the GNU General Public Licence version 2, a copy of which
 is provided.
+
+Contributor PR#1 is dedicated to the Public Domain
 
 =head1 CONSPIRACY
 

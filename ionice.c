@@ -9,10 +9,12 @@ void show_usage(char *name) {
     fprintf(stderr, "\n");
     fprintf(stderr, "%s: set the I/O priority level for a command\n\n", name);
     fprintf(stderr, "Usage: %s --high   <utility>\n", name);
-    fprintf(stderr, "    or %s --low    <utility>\n", name);
     fprintf(stderr, "    or %s --normal <utility>\n\n", name);
+    fprintf(stderr, "    or %s --low    <utility>\n", name);
+    fprintf(stderr, "    or %s --idle <utility>\n\n", name);
     fprintf(stderr, "Copyright 2019 David Cantrell, licenced under the\n");
     fprintf(stderr, "GNU General Public Licence version 2\n\n");
+    fprintf(stderr, "Contributor PR #1 dedicated to the Public Domain\n\n");
 }
 
 int main(int argc, char *argv[]) {
@@ -27,7 +29,11 @@ int main(int argc, char *argv[]) {
         );
     } else if(strncmp("--normal", argv[1], 9) == 0) {
         /* do nothing */
-    } else if(strncmp("--low", argv[1], 6) == 0) {
+    } else if (strncmp("--low", argv[1], 9) == 0) {
+         setiopolicy_np(
+            IOPOL_TYPE_DISK, IOPOL_SCOPE_PROCESS, IOPOL_UTILITY
+        );       
+    } else if(strncmp("--idle", argv[1], 6) == 0) {
         setiopolicy_np(
             IOPOL_TYPE_DISK, IOPOL_SCOPE_PROCESS, IOPOL_THROTTLE
         );
